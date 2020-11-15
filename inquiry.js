@@ -60,7 +60,27 @@ async function getUserInput() {
 async function writeREADME() {
     let { title, description, installation, usage, contribution, tests, license, github, email } = await getUserInput();
 
-    const myREADME = `# ${title}`
+    const myREADME = `# ${title}
+
+## Project Description\n ${description}
+
+## Table of Contents
+* [Installation Procedure](#installation)
+* [Usage Information](#usage)
+* [Contribution Guidelines](#contribution)
+* [Testing Instructions](#tests)
+* [Questions](#Questions)
+
+## Installation Procedure\n ${installation}
+
+## Usage Information\n ${usage}
+
+## Contribution Guidelines\n ${contribution}
+
+## Testing Instructions\n ${tests}
+
+## Questions\n https://github.com/${github}\n
+${email} `;
 
     fs.writeFile("README.md", myREADME, (err) =>
         err ? console.log(err) : console.log("Success!")
