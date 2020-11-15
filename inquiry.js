@@ -57,4 +57,14 @@ async function getUserInput() {
     }
 };
 
-getUserInput();
+async function writeREADME() {
+    let { title, description, installation, usage, contribution, tests, license, github, email } = await getUserInput();
+
+    const myREADME = `# ${title}`
+
+    fs.writeFile("README.md", myREADME, (err) =>
+        err ? console.log(err) : console.log("Success!")
+    );
+}
+
+writeREADME();
