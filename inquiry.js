@@ -101,7 +101,7 @@ ${license}
 ## Questions\n https://github.com/${github}\n
 ${email} `;
 
-    fs.writeFile("README.md", myREADME, (err) =>
+    fs.writeFile("README-sample.md", myREADME, (err) =>
         err ? console.log(err) : console.log("Success!")
     );
 }
