@@ -60,7 +60,26 @@ async function getUserInput() {
 async function writeREADME() {
     let { title, description, installation, usage, contribution, tests, license, github, email } = await getUserInput();
 
+    switch (license) {
+        case "Apache":
+            license = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+            break;
+        case "IBM":
+            license = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+            break;
+        case "MIT":
+            license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+            break;
+        case "Mozilla":
+            license = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+            break;
+        case "None":
+            break;
+    }
+
     const myREADME = `# ${title}
+
+${license}
 
 ## Project Description\n ${description}
 
