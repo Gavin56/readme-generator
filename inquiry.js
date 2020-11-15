@@ -6,8 +6,49 @@ async function getUserInput() {
         const data = await inquirer.prompt([
             {
                 type: "input",
-                message: "What's your name",
-                name: "name"
+                message: "What's the title of your project?",
+                name: "title"
+            },
+            {
+                type: "input",
+                message: "Describe your project:",
+                name: "description"
+            },
+            {
+                type: "input",
+                message: "Write some installation instructions:",
+                name: "installation"
+            },
+            {
+                type: "input",
+                message: "Write some usage information:",
+                name: "usage"
+            },
+            {
+                type: "input",
+                message: "Write some contribution guidelines:",
+                name: "contribution"
+            },
+            {
+                type: "input",
+                message: "Write some test instructions:",
+                name: "tests"
+            },
+            {
+                type: "list",
+                message: "Which license would you like to use?",
+                choices: ["Apache", "IBM", "MIT", "Mozilla", "None"],
+                name: "license"
+            },
+            {
+                type: "input",
+                message: "What is your Github username?",
+                name: "github"
+            },
+            {
+                type: "input",
+                message: "What is your email?",
+                name: "email"
             }
         ]);
         return data;
